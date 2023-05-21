@@ -7,13 +7,16 @@ pipeline {
     stages {
         stage('Build'){
             steps {
-                echo "Build"
+                echo "Start build"
+                sh "./mvnw clean compile"
+                echo "Finish build"
             }
         }
         
         stage('Deploy'){
             steps {
-                echo "Deploy"
+                echo "Start Deploy"
+                echo "Finish Deploy"
             }
         }
     }
