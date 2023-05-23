@@ -19,7 +19,8 @@ pipeline {
                 sh '''
                 cd target/
                 cp *.jar /home/linggar/projects/app-integration-jenkins/
-                java -jar *.jar
+                kill -9 $(ps -ef | pgrep -f "integration-jenkins")
+                java -jar integration-jenkins-*.jar &
                 '''
                 echo "Finish Deploy"
             }
