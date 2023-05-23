@@ -19,7 +19,11 @@ pipeline {
                 sh '''
                 cd target/
                 cp *.jar /home/linggar/projects/app-integration-jenkins/
-                kill -9 $(ps -ef | pgrep -f "integration-jenkins")
+                PID=`ps -eaf | grep integration-jenkins | grep -v grep | awk '{print $2}'`
+				if [[ "" !=  "$PID" ]]; then
+				  echo "killing $PID"
+				  kill -9 $PID
+				fi
                 java -jar integration-jenkins-*.jar &
                 '''
                 echo "Finish Deploy"
