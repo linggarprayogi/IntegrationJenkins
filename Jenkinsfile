@@ -24,7 +24,7 @@ pipeline {
 				fi
                 cd target/
                 cp *.jar /home/linggar/projects/app-integration-jenkins/
-                nohup java -Dhudson.util.ProcessTree.disable=true -jar integration-jenkins-*.jar > log.log 2>&1 &
+                nohup java -jar integration-jenkins-*.jar >> log.log 2>&1&
                 '''
                 echo "Finish Deploy"
             }
