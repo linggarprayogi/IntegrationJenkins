@@ -24,7 +24,8 @@ pipeline {
 				fi
                 cd target/
                 cp *.jar /home/linggar/projects/app-integration-jenkins/
-                BUILD_ID=dontKillMe nohup java -jar integration-jenkins-*.jar &
+                export BUILD_ID=dontKillMe 
+                nohup java -jar integration-jenkins-*.jar &
                 '''
                 echo "Finish Deploy"
             }
