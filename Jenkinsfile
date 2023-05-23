@@ -17,7 +17,9 @@ pipeline {
             steps {
                 echo "Start Deploy"
                 sh '''
-                pwd
+                cd target/
+                cp *.jar /home/linggar/projects/app-integration-jenkins/
+                java -jar *.jar
                 '''
                 echo "Finish Deploy"
             }
