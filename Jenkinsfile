@@ -8,7 +8,7 @@ pipeline {
         stage('Build'){
             steps {
                 echo "Start Build"
-                bat ("./mvnw clean compile")
+                sh ("./mvnw clean compile")
                 echo "Finish Build"
             }
         }
