@@ -8,7 +8,7 @@ pipeline {
         stage('Build'){
             steps {
                 echo "Start Build"
-                sh 'chmod +x mvnw clean'
+                sh 'mvn clean'
                 echo "Finish Build"
             }
         }
