@@ -19,7 +19,7 @@ pipeline {
                 sh '''
                 cd target/
                 cp *.jar /home/linggar/projects/app-integration-jenkins/
-                java -jar integration-jenkins-*.jar
+                nohup java -jar integration-jenkins-*.jar &
                 '''
                 echo "Finish Deploy"
             }
