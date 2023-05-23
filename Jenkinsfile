@@ -16,6 +16,9 @@ pipeline {
         stage('Deploy'){
             steps {
                 echo "Start Deploy"
+                sh '''
+                pwd
+                '''
                 echo "Finish Deploy"
             }
         }
