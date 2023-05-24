@@ -25,7 +25,6 @@ pipeline {
                 cd target/
                 cp *.jar /home/linggar/projects/app-integration-jenkins/
                 nohup java -jar integration-jenkins-*.jar > log.log 2>&1&
-                javaw -jar integration-jenkins-0.0.1-SNAPSHOT.jar
                 '''
                 echo "Finish Deploy"
             }
